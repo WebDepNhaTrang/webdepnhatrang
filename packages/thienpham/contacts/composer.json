@@ -1,0 +1,25 @@
+{
+    "name": "thienpham/contacts",
+    "description": "Support for creating contact templates, send information to email admin.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Thien Pham",
+            "email": "chithien175@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ThienPham\\Contacts\\": "src/"
+        }
+      },
+      "extra": {
+        "laravel": {
+          "providers": [
+            "ThienPham\\Contacts\\Providers\\ContactsServiceProvider"
+          ]
+        }
+      }
+}

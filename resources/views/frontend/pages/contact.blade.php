@@ -40,18 +40,24 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-md-push-1">
+                    
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
+                            @if (session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                             <form action="{{ route('store.thienpham.contact') }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Fullname" name="fullname">
+                                    <input type="text" class="form-control" placeholder="Fullname" name="fullname" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email" name="email">
+                                    <input type="email" class="form-control" placeholder="Email" name="email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Subject" name="subject">
+                                    <input type="text" class="form-control" placeholder="Subject" name="subject" required>
                                 </div>
                                 <div class="form-group">
                                     <textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message" name="msg" required></textarea>
