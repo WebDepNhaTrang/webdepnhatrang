@@ -150,7 +150,6 @@ return [
         /*
          * Package Service Providers...
          */
-        ThienPham\Contacts\Providers\ContactsServiceProvider::class,
 
         /*
          * Application Service Providers...

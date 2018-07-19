@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e08736460217edf68430d53d87262fc",
+    "content-hash": "e3d147f81a9fb15771b97710ae173098",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -3394,6 +3394,43 @@
             "time": "2018-06-25T17:08:46+00:00"
         },
         {
+            "name": "thienpham/contacts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chithien175/contacts.git",
+                "reference": "3bdee2a9a1db134d0f0b74eea19ca26413ebd994"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chithien175/contacts/zipball/3bdee2a9a1db134d0f0b74eea19ca26413ebd994",
+                "reference": "3bdee2a9a1db134d0f0b74eea19ca26413ebd994",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ThienPham\\Contacts\\Providers\\ContactsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ThienPham\\Contacts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Thien Pham",
+                    "email": "chithien175@gmail.com"
+                }
+            ],
+            "description": "Support for creating contact templates, send information to email admin.",
+            "time": "2018-07-19T07:20:48+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.1",
             "source": {
@@ -5188,7 +5225,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "thienpham/contacts": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
