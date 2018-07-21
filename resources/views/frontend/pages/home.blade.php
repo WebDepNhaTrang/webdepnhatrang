@@ -66,28 +66,28 @@
 					</div>
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 						<div class="about-desc">
-							<span class="heading-meta">Welcome</span>
-							<h2 class="colorlib-heading">Who we are</h2>
-							<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
-							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+							<span class="heading-meta">Giới Thiệu</span>
+							<h2 class="colorlib-heading">WEBDEPNHATRANG.COM</h2>
+							<p>Web Đẹp Nha Trang - Là một nhóm thiết kế Website chuyên nghiệp, chúng tôi luôn đảm bảo chất lượng sản phẩm cao nhất cho khách hàng với uy tín và kỹ thuật được tích lũy trong hơn 5 năm. Chúng tôi tự tin sẽ giúp quý khách đạt được hiệu quả cao nhất trong việc quảng bá thương hiệu của công ty.</p>
+                        <p>Thiết kế web đẹp - chuyên nghiệp - hiện đại - nhanh chóng, đó là điều chúng tôi có thể giúp quý khách thực hiện, bởi đó là lĩnh vực của chúng tôi với kinh nghiệm hơn 5 năm đủ để hiểu quý khách cần gì !</p>
 						</div>
 						<div class="row padding">
 							<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
 								<a href="#" class="steps active">
 									<p class="icon"><span><i class="icon-check"></i></span></p>
-									<h3>We are <br>pasionate</h3>
+									<h3>Thiết Kế <br>Web</h3>
 								</a>
 							</div>
 							<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
 								<a href="#" class="steps">
 									<p class="icon"><span><i class="icon-check"></i></span></p>
-									<h3>Honest <br>Dependable</h3>
+									<h3>Dịch Vụ <br>Hosting</h3>
 								</a>
 							</div>
 							<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
 								<a href="#" class="steps">
 									<p class="icon"><span><i class="icon-check"></i></span></p>
-									<h3>Always <br>Improving</h3>
+									<h3>Quản trị <br>Web</h3>
 								</a>
 							</div>
 						</div>
@@ -100,8 +100,8 @@
 			<div class="colorlib-narrow-content">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<span class="heading-meta">What I do?</span>
-						<h2 class="colorlib-heading">Here are some of my expertise</h2>
+						<span class="heading-meta">Dịch Vụ</span>
+						<h2 class="colorlib-heading">Các Dịch Vụ Của Web Đẹp Nha Trang</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -110,41 +110,41 @@
 							<div class="col-md-12">
 								<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
 									<div class="colorlib-icon">
-										<i class="flaticon-worker"></i>
+										<i class="flaticon-website"></i>
 									</div>
 									<div class="colorlib-text">
-										<h3>General Conctructing</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+										<h3>Thiêt Kế Trang Web</h3>
+										<p>Những trang web chúng tôi thiết kế đều thông qua kiểm duyệt chất lượng. Giao diện phong phú, chức năng vượt trội, tối ưu từ khóa, kết nối mạng xã hội.</p>
 									</div>
 								</div>
 
 								<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
 									<div class="colorlib-icon">
-										<i class="flaticon-sketch"></i>
+										<i class="flaticon-data-storage"></i>
 									</div>
 									<div class="colorlib-text">
-										<h3>Pre-Contruction Design</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+										<h3>Dịch Vụ Hosting</h3>
+										<p>Web Đẹp Nha Trang cung cấp dịch vụ hosting giá rẻ, sử dụng ổ cứng SSD với hiệu suất vượt trội nhanh hơn gấp 40 lần so với ổ cứng thông thường.</p>
 									</div>
 								</div>
 
 								<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
 									<div class="colorlib-icon">
-										<i class="flaticon-engineering"></i>
+										<i class="flaticon-income"></i>
 									</div>
 									<div class="colorlib-text">
-										<h3>Building &amp; Modeling</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+										<h3>Quảng Cáo Trực Tuyến</h3>
+										<p>Cung cấp dịch vụ quảng cáo Google, Facebook và Zalo và các trang báo chuyên nghiệp, nhằm mang lại hiệu quả cao cho khách hàng và đối tác.</p>
 									</div>
 								</div>
 
 								<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
 									<div class="colorlib-icon">
-										<i class="flaticon-crane"></i>
+										<i class="flaticon-best"></i>
 									</div>
 									<div class="colorlib-text">
-										<h3>Construction Management</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+										<h3>Quản Trị Trang Web</h3>
+										<p>Bạn không có thời gian chăm sóc website của mình, Web Đẹp Nha Trang sẽ giúp bạn viết và đăng bài, sản phẩm mỗi tháng, tối ưu từ khóa trên google.</p>
 									</div>
 								</div>
 							</div>
@@ -156,19 +156,19 @@
 								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
 									<div class="services-img" style="background-image: url(images/services-1.jpg)"></div>
 									<div class="desc">
-										<h3>Design &amp; Build</h3>
+										<h3>Thiết Kế Trang Web</h3>
 									</div>
 								</a>
 								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
 									<div class="services-img" style="background-image: url(images/services-2.jpg)"></div>
 									<div class="desc">
-										<h3>House Remodeling</h3>
+										<h3>Dịch Vụ Hosting</h3>
 									</div>
 								</a>
 								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
 									<div class="services-img" style="background-image: url(images/services-3.jpg)"></div>
 									<div class="desc">
-										<h3>Construction Management</h3>
+										<h3>Quảng Cáo Trực Tuyến</h3>
 									</div>
 								</a>
 							</div>
@@ -176,13 +176,13 @@
 								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
 									<div class="services-img" style="background-image: url(images/services-4.jpg)"></div>
 									<div class="desc">
-										<h3>Painting &amp; Tiling</h3>
+										<h3>Quản Trị Trang Web</h3>
 									</div>
 								</a>
 								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
 									<div class="services-img" style="background-image: url(images/services-5.jpg)"></div>
 									<div class="desc">
-										<h3>Kitchen Remodeling</h3>
+										<h3>Đẩy Từ Khóa</h3>
 									</div>
 								</a>
 							</div>
