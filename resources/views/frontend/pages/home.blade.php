@@ -1,61 +1,45 @@
 @extends('frontend.layouts.master')
 
+@section('title', 'Chuyên Thiết Kế Website Đẹp Giá Rẻ Tại Nha Trang')
+@section('description', '')
+
+@section('fb_url', route('frontend.pages.home'))
+@section('fb_type', 'website')
+@section('fb_title', '')
+@section('fb_des', '')
+@section('fb_img', '')
+
 @section('content')
 	<div id="colorlib-main">
+		<?php
+			$banners = getAllBanners('*', 'order', 'asc');
+		?>
+		@if($banners->count() > 0)
 		<aside id="colorlib-hero" class="js-fullheight">
 			<div class="flexslider js-fullheight">
 				<ul class="slides">
-				<li style="background-image: url(images/img_bg_1.jpg);">
-					<div class="overlay"></div>
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-								<div class="slider-text-inner">
-									<div class="desc">
-										<h1>An Inspiring Built Space</h1>
-										<h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
-											<p><a class="btn btn-primary btn-learn">View Project <i class="icon-arrow-right3"></i></a></p>
-										</div>
+					@foreach($banners as $v)
+					<li style="background-image: url({{ Voyager::image($v->image) }});">
+						<div class="overlay"></div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+									<div class="slider-text-inner">
+										<div class="desc">
+											<h1>{{ $v->title }}</h1>
+											<h2>{{ $v->content }}</h2>
+												<p><a href="{{ $v->link_btn }}" class="btn btn-primary btn-learn">{{ $v->text_btn }} <i class="icon-arrow-right3"></i></a></p>
+											</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</li>
-				<li style="background-image: url(images/img_bg_2.jpg);">
-					<div class="overlay"></div>
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-								<div class="slider-text-inner">
-									<div class="desc">
-										<h1>Interior Design Studio</h1>
-											<h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
-											<p><a class="btn btn-primary btn-learn">View Project <i class="icon-arrow-right3"></i></a></p>
-										</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li style="background-image: url(images/img_bg_3.jpg);">
-					<div class="overlay"></div>
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-								<div class="slider-text-inner">
-									<div class="desc">
-										<h1>The National Gallery</h1>
-											<h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
-											<p><a class="btn btn-primary btn-learn">View Project <i class="icon-arrow-right3"></i></a></p>
-										</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
+					</li>
+					@endforeach
 				</ul>
 			</div>
 		</aside>
+		@endif
 
 		<div class="colorlib-about">
 			<div class="colorlib-narrow-content">
@@ -113,8 +97,8 @@
 										<i class="flaticon-website"></i>
 									</div>
 									<div class="colorlib-text">
-										<h3>Thiêt Kế Trang Web</h3>
-										<p>Những trang web chúng tôi thiết kế đều thông qua kiểm duyệt chất lượng. Giao diện phong phú, chức năng vượt trội, tối ưu từ khóa, kết nối mạng xã hội.</p>
+										<h3>{{ setting('service.item1_title') }}</h3>
+										{!! setting('service.item1_body') !!}
 									</div>
 								</div>
 
@@ -123,8 +107,8 @@
 										<i class="flaticon-data-storage"></i>
 									</div>
 									<div class="colorlib-text">
-										<h3>Dịch Vụ Hosting</h3>
-										<p>Web Đẹp Nha Trang cung cấp dịch vụ hosting giá rẻ, sử dụng ổ cứng SSD với hiệu suất vượt trội nhanh hơn gấp 40 lần so với ổ cứng thông thường.</p>
+										<h3>{{ setting('service.item2_title') }}</h3>
+										{!! setting('service.item2_body') !!}
 									</div>
 								</div>
 
@@ -133,8 +117,8 @@
 										<i class="flaticon-income"></i>
 									</div>
 									<div class="colorlib-text">
-										<h3>Quảng Cáo Trực Tuyến</h3>
-										<p>Cung cấp dịch vụ quảng cáo Google, Facebook và Zalo và các trang báo chuyên nghiệp, nhằm mang lại hiệu quả cao cho khách hàng và đối tác.</p>
+										<h3>{{ setting('service.item3_title') }}</h3>
+										{!! setting('service.item3_body') !!}
 									</div>
 								</div>
 
@@ -143,8 +127,8 @@
 										<i class="flaticon-best"></i>
 									</div>
 									<div class="colorlib-text">
-										<h3>Quản Trị Trang Web</h3>
-										<p>Bạn không có thời gian chăm sóc website của mình, Web Đẹp Nha Trang sẽ giúp bạn viết và đăng bài, sản phẩm mỗi tháng, tối ưu từ khóa trên google.</p>
+										<h3>{{ setting('service.item4_title') }}</h3>
+										{!! setting('service.item4_body') !!}
 									</div>
 								</div>
 							</div>
@@ -368,21 +352,6 @@
 			</div>
 		</div>
 
-		<div id="get-in-touch" class="colorlib-bg-color">
-			<div class="colorlib-narrow-content">
-				<div class="row">
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<h2>Get in Touch!</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<p class="colorlib-lead">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-						<p><a href="#" class="btn btn-primary btn-learn">Contact me!</a></p>
-					</div>
-					
-				</div>
-			</div>
-		</div>
+		@include('frontend.partials.get-in-touch')
 	</div>
 @endsection

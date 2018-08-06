@@ -1,13 +1,22 @@
 @extends('frontend.layouts.master')
 
+@section('title', 'Dịch Vụ Thiết Kế Website Đẹp Giá Rẻ Tại Nha Trang')
+@section('description', '')
+
+@section('fb_url', route('frontend.pages.service'))
+@section('fb_type', 'website')
+@section('fb_title', '')
+@section('fb_des', '')
+@section('fb_img', '')
+
 @section('content')
 <div id="colorlib-main">
     <div class="colorlib-services">
         <div class="colorlib-narrow-content">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-                    <span class="heading-meta">Services</span>
-                    <h2 class="colorlib-heading">Here are some of our expertise</h2>
+                    <span class="heading-meta">{{ setting('service.title') }}</span>
+                    <h2 class="colorlib-heading">{{ setting('service.heading') }}</h2>
                 </div>
             </div>
             <div class="row row-bottom-padded-md">
@@ -16,21 +25,21 @@
                         <div class="col-md-12">
                             <div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
                                 <div class="colorlib-icon">
-                                    <i class="flaticon-worker"></i>
+                                    <i class="flaticon-website"></i>
                                 </div>
                                 <div class="colorlib-text">
-                                    <h3>General Conctructing</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                                    <h3>{{ setting('service.item1_title') }}</h3>
+                                    {!! setting('service.item1_body') !!}
                                 </div>
                             </div>
 
                             <div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
                                 <div class="colorlib-icon">
-                                    <i class="flaticon-sketch"></i>
+                                    <i class="flaticon-data-storage"></i>
                                 </div>
                                 <div class="colorlib-text">
-                                    <h3>Pre-Contruction Design</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                                    <h3>{{ setting('service.item2_title') }}</h3>
+                                    {!! setting('service.item2_body') !!}
                                 </div>
                             </div>
                         </div>
@@ -41,21 +50,21 @@
                         <div class="col-md-12">
                             <div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
                                 <div class="colorlib-icon">
-                                    <i class="flaticon-engineering"></i>
+                                    <i class="flaticon-income"></i>
                                 </div>
                                 <div class="colorlib-text">
-                                    <h3>Building &amp; Modeling</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                                    <h3>{{ setting('service.item3_title') }}</h3>
+                                    {!! setting('service.item3_body') !!}
                                 </div>
                             </div>
 
                             <div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
                                 <div class="colorlib-icon">
-                                    <i class="flaticon-crane"></i>
+                                    <i class="flaticon-best"></i>
                                 </div>
                                 <div class="colorlib-text">
-                                    <h3>Construction Management</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                                    <h3>{{ setting('service.item4_title') }}</h3>
+                                    {!! setting('service.item4_body') !!}
                                 </div>
                             </div>
                         </div>
@@ -109,21 +118,6 @@
         </div>
     </div>
 
-    <div id="get-in-touch" class="colorlib-bg-color">
-        <div class="colorlib-narrow-content">
-            <div class="row">
-                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                    <h2>Get in Touch!</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-                    <p class="colorlib-lead">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    <p><a href="#" class="btn btn-primary btn-learn">Contact me!</a></p>
-                </div>
-                
-            </div>
-        </div>
-    </div>
+    @include('frontend.partials.get-in-touch')
 </div>
 @endsection

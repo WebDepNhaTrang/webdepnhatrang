@@ -230,7 +230,7 @@ figure {
   background: #fff url(../images/loader.gif) no-repeat center center;
   width: 100%;
   float: left;
-  margin-bottom: 10em;
+  /* margin-bottom: 10em; */
   clear: both; }
   #colorlib-hero .flexslider {
     border: none;
@@ -382,7 +382,7 @@ body.offcanvas {
 .colorlib-services,
 .colorlib-contact {
   padding-top: 4em;
-  padding-bottom: 9em;
+  /* padding-bottom: 9em; */
   clear: both;
   width: 100%;
   display: block; }
@@ -828,7 +828,8 @@ body.offcanvas {
 #colorlib-counter {
   position: relative;
   clear: both;
-  margin-bottom: 5em; }
+  /* margin-bottom: 5em;  */
+}
 
 .colorlib-counters {
   padding: 3em 0;
@@ -1253,34 +1254,3 @@ body.offcanvas {
     height: inherit !important;
     float: left;
     padding-top: 30px; } }
-
-/* =======================================================
-*
-* 	Space
-*
-* ======================================================= */
-
-/* Margin */
-.m-0{ margin: 0px; }
-.m-10{ margin: 10px; }
-.m-15{ margin: 15px; }
-.m-20{ margin: 20px; }
-.m-25{ margin: 25px; }
-.m-30{ margin: 30px; }
-.m-35{ margin: 35px; }
-
-/* Margin Top */
-.mt-0{ margin-top: 0px; }
-.mt-10{ margin-top: 10px; }
-.mt-20{ margin-top: 20px; }
-.mt-30{ margin-top: 30px; }
-.mt-40{ margin-top: 40px; }
-.mt-50{ margin-top: 50px; }
-
-/* Margin Bottom */
-.mb-0{ margin-bottom: 0px; }
-.mb-10{ margin-bottom: 10px; }
-.mb-20{ margin-bottom: 20px; }
-.mb-30{ margin-bottom: 30px; }
-.mb-40{ margin-bottom: 40px; }
-.mb-50{ margin-bottom: 50px; }

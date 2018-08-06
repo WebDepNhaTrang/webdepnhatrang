@@ -13,3 +13,5 @@
 <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 <!-- Theme style  -->
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<!-- Main style  -->
+<link rel="stylesheet" href="{{ asset('css/main.css') }}">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th7 19, 2018 lúc 09:46 AM
+-- Thời gian đã tạo: Th8 06, 2018 lúc 10:38 AM
 -- Phiên bản máy phục vụ: 10.1.30-MariaDB
 -- Phiên bản PHP: 7.2.2
 
@@ -21,6 +21,33 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `db_webdepnhatrang`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `banners`
+--
+
+CREATE TABLE `banners` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `text_btn` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_btn` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order` tinyint(4) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `banners`
+--
+
+INSERT INTO `banners` (`id`, `image`, `title`, `content`, `text_btn`, `link_btn`, `order`, `created_at`, `updated_at`) VALUES
+(1, 'banners/August2018/aX8IDdzNGfBf6BgitKmH.jpg', 'Banner Demo 1', 'Dữ liệu đang được cập nhật', 'Nút 1', '#', 1, '2018-08-06 00:05:03', '2018-08-06 00:05:03'),
+(2, 'banners/August2018/5OStuyVWsVcuh7LfYFLL.jpg', 'Banner Demo 2', 'Dữ liệu đang được cập nhật', 'Nút 1', '#', 2, '2018-08-06 00:05:16', '2018-08-06 00:05:16'),
+(3, 'banners/August2018/Mi6ivfyi8tEkt0YgLNJw.jpg', 'Banner Demo 3', 'Dữ liệu đang được cập nhật', 'Nút 3', '#', 3, '2018-08-06 00:05:39', '2018-08-06 00:05:39');
 
 -- --------------------------------------------------------
 
@@ -128,7 +155,16 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (53, 6, 'status', 'select_dropdown', 'Status', 1, 1, 1, 1, 1, 1, '{\"default\":\"INACTIVE\",\"options\":{\"INACTIVE\":\"INACTIVE\",\"ACTIVE\":\"ACTIVE\"}}', 9),
 (54, 6, 'created_at', 'timestamp', 'Created At', 1, 1, 1, 0, 0, 0, '', 10),
 (55, 6, 'updated_at', 'timestamp', 'Updated At', 1, 0, 0, 0, 0, 0, '', 11),
-(56, 6, 'image', 'image', 'Page Image', 0, 1, 1, 1, 1, 1, '', 12);
+(56, 6, 'image', 'image', 'Page Image', 0, 1, 1, 1, 1, 1, '', 12),
+(57, 7, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(58, 7, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, NULL, 4),
+(59, 7, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, NULL, 2),
+(60, 7, 'content', 'text', 'Content', 0, 1, 1, 1, 1, 1, NULL, 3),
+(61, 7, 'text_btn', 'text', 'Text Button', 0, 1, 1, 1, 1, 1, NULL, 5),
+(62, 7, 'link_btn', 'text', 'Link Button', 0, 1, 1, 1, 1, 1, NULL, 6),
+(63, 7, 'order', 'number', 'Order', 0, 1, 1, 1, 1, 1, NULL, 7),
+(64, 7, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 8),
+(65, 7, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 9);
 
 -- --------------------------------------------------------
 
@@ -164,7 +200,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, '', '', 1, 0, NULL, '2018-07-18 02:22:39', '2018-07-18 02:22:39'),
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2018-07-18 02:22:40', '2018-07-18 02:22:40'),
 (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
-(6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2018-07-18 02:22:41', '2018-07-18 02:22:41');
+(6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
+(7, 'banners', 'banners', 'Banner', 'Banners', 'voyager-photos', 'App\\Banner', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-05 21:17:41', '2018-08-05 21:17:41');
 
 -- --------------------------------------------------------
 
@@ -215,25 +252,27 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.dashboard', NULL),
-(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 5, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.media.index', NULL),
-(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 3, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.users.index', NULL),
-(4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 2, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2018-07-18 02:22:40', '2018-07-18 02:22:40', NULL, NULL),
-(6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 10, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.menus.index', NULL),
-(7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 11, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.database.index', NULL),
-(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 12, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.compass.index', NULL),
-(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 13, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.bread.index', NULL),
-(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 14, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.settings.index', NULL),
-(11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 8, '2018-07-18 02:22:40', '2018-07-18 02:22:40', 'voyager.categories.index', NULL),
-(12, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2018-07-18 02:22:41', '2018-07-18 02:22:41', 'voyager.posts.index', NULL),
-(13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2018-07-18 02:22:41', '2018-07-18 02:22:41', 'voyager.pages.index', NULL),
-(14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 13, '2018-07-18 02:22:41', '2018-07-18 02:22:41', 'voyager.hooks', NULL),
+(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 6, '2018-07-18 02:22:40', '2018-08-05 21:19:12', 'voyager.media.index', NULL),
+(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 5, '2018-07-18 02:22:40', '2018-08-05 21:19:12', 'voyager.users.index', NULL),
+(4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 4, '2018-07-18 02:22:40', '2018-08-05 21:19:12', 'voyager.roles.index', NULL),
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 7, '2018-07-18 02:22:40', '2018-08-05 21:19:12', NULL, NULL),
+(6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 1, '2018-07-18 02:22:40', '2018-08-05 21:18:45', 'voyager.menus.index', NULL),
+(7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2018-07-18 02:22:40', '2018-08-05 21:18:45', 'voyager.database.index', NULL),
+(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2018-07-18 02:22:40', '2018-08-05 21:18:45', 'voyager.compass.index', NULL),
+(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2018-07-18 02:22:40', '2018-08-05 21:18:45', 'voyager.bread.index', NULL),
+(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 3, '2018-07-18 02:22:40', '2018-08-05 21:19:12', 'voyager.settings.index', NULL),
+(11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, 22, 3, '2018-07-18 02:22:40', '2018-08-05 21:18:59', 'voyager.categories.index', NULL),
+(12, 1, 'Posts', '', '_self', 'voyager-news', NULL, 22, 2, '2018-07-18 02:22:41', '2018-08-05 21:18:53', 'voyager.posts.index', NULL),
+(13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, 22, 4, '2018-07-18 02:22:41', '2018-08-05 21:19:03', 'voyager.pages.index', NULL),
+(14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2018-07-18 02:22:41', '2018-08-05 21:18:45', 'voyager.hooks', NULL),
 (15, 2, 'Trang Chủ', '', '_self', NULL, '#000000', NULL, 15, '2018-07-18 20:04:34', '2018-07-18 20:04:34', 'frontend.pages.home', NULL),
 (16, 2, 'Giới Thiệu', '', '_self', NULL, '#000000', NULL, 16, '2018-07-18 20:04:48', '2018-07-18 20:04:48', 'frontend.pages.about', NULL),
 (17, 2, 'Thiết Kế Website', '', '_self', NULL, '#000000', NULL, 17, '2018-07-18 20:05:05', '2018-07-18 20:21:02', 'frontend.pages.design', 'null'),
 (18, 2, 'Dịch Vụ', '', '_self', NULL, '#000000', NULL, 18, '2018-07-18 20:05:14', '2018-07-18 20:21:13', 'frontend.pages.service', 'null'),
 (19, 2, 'Tin Tức', '', '_self', NULL, '#000000', NULL, 19, '2018-07-18 20:05:23', '2018-07-18 20:21:23', 'frontend.pages.news', 'null'),
-(20, 2, 'Liên Hệ', '', '_self', NULL, '#000000', NULL, 20, '2018-07-18 20:05:30', '2018-07-18 20:32:08', 'frontend.pages.contact', 'null');
+(20, 2, 'Liên Hệ', '', '_self', NULL, '#000000', NULL, 20, '2018-07-18 20:05:30', '2018-07-18 20:32:08', 'frontend.pages.contact', 'null'),
+(21, 1, 'Banners', '', '_self', 'voyager-photos', NULL, 22, 1, '2018-08-05 21:17:41', '2018-08-05 21:18:45', 'voyager.banners.index', NULL),
+(22, 1, 'Frontend Custom', '', '_self', 'voyager-paint-bucket', '#000000', NULL, 2, '2018-08-05 21:18:39', '2018-08-05 21:18:49', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -378,7 +417,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (38, 'edit_pages', 'pages', '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
 (39, 'add_pages', 'pages', '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
 (40, 'delete_pages', 'pages', '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
-(41, 'browse_hooks', NULL, '2018-07-18 02:22:41', '2018-07-18 02:22:41');
+(41, 'browse_hooks', NULL, '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
+(42, 'browse_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
+(43, 'read_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
+(44, 'edit_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
+(45, 'add_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
+(46, 'delete_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41');
 
 -- --------------------------------------------------------
 
@@ -435,7 +479,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (37, 1),
 (38, 1),
 (39, 1),
-(40, 1);
+(40, 1),
+(42, 1),
+(43, 1),
+(44, 1),
+(45, 1),
+(46, 1);
 
 -- --------------------------------------------------------
 
@@ -524,7 +573,37 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (7, 'admin.description', 'Admin Description', 'Chào bạn đến với KaTiSoft - Web Đẹp Nha Trang', '', 'text', 2, 'Admin'),
 (8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
-(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin');
+(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin'),
+(11, 'about.st1-title', 'Section 1 - Title', 'Về Chúng Tôi', NULL, 'text', 6, 'About'),
+(12, 'contact.title', 'Title', 'Liên hệ', NULL, 'text', 7, 'Contact'),
+(13, 'contact.heading', 'Heading', 'Web Đẹp Nha Trang', NULL, 'text', 8, 'Contact'),
+(14, 'contact.email', 'Email', 'info@webdepnhatrang.com', NULL, 'text', 9, 'Contact'),
+(15, 'contact.address', 'Address', 'Nha Trang, Khánh Hòa', NULL, 'text', 10, 'Contact'),
+(16, 'contact.phone', 'Phone', '0909.999.999', NULL, 'text', 11, 'Contact'),
+(17, 'contact.google_lat_long', 'Google Map (Lat,Long)', '12.239550, 109.197067', NULL, 'text', 12, 'Contact'),
+(18, 'about.st1-heading', 'Section 1 - Heading', 'Web Đẹp Nha Trang', NULL, 'text', 13, 'About'),
+(20, 'about.st1_body', 'Section 1 - Body', '<p>Web Đẹp Nha Trang - L&agrave; một nh&oacute;m thiết kế Website chuy&ecirc;n nghiệp, ch&uacute;ng t&ocirc;i lu&ocirc;n đảm bảo chất lượng sản phẩm cao nhất cho kh&aacute;ch h&agrave;ng với uy t&iacute;n v&agrave; kỹ thuật được t&iacute;ch lũy trong hơn 5 năm. Ch&uacute;ng t&ocirc;i tự tin sẽ gi&uacute;p qu&yacute; kh&aacute;ch đạt được hiệu quả cao nhất trong việc quảng b&aacute; thương hiệu của c&ocirc;ng ty.</p>\r\n<p>Thiết kế web đẹp - chuy&ecirc;n nghiệp - hiện đại - nhanh ch&oacute;ng, đ&oacute; l&agrave; điều ch&uacute;ng t&ocirc;i c&oacute; thể gi&uacute;p qu&yacute; kh&aacute;ch thực hiện, bởi đ&oacute; l&agrave; lĩnh vực của ch&uacute;ng t&ocirc;i với kinh nghiệm hơn 5 năm đủ để hiểu qu&yacute; kh&aacute;ch cần g&igrave; !</p>', NULL, 'rich_text_box', 14, 'About'),
+(21, 'about.st1_image', 'Section 1 - Image', 'settings/August2018/W2btJfnbihu40K2fVrFk.jpg', NULL, 'image', 15, 'About'),
+(22, 'about.st2_heading', 'Section 2 - Heading', 'Lịch Sử', NULL, 'text', 16, 'About'),
+(23, 'about.st2_body', 'Section 2 - Body', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>', NULL, 'rich_text_box', 17, 'About'),
+(24, 'about.accordion1_title', 'Accordion 1 - Title', 'Dữ liệu mẫu 1', NULL, 'text', 18, 'About'),
+(25, 'about.accordion1_body', 'Accordion 1 - Body', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>', NULL, 'rich_text_box', 19, 'About'),
+(26, 'about.accordion2_title', 'Accordion 2 - Title', 'Dữ liệu mẫu 2', NULL, 'text', 20, 'About'),
+(27, 'about.accordion2_body', 'Accordion 2 - Body', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>', NULL, 'rich_text_box', 21, 'About'),
+(28, 'about.accordion3_title', 'Accordion 3 - Title', 'Dữ liệu mẫu 3', NULL, 'text', 22, 'About'),
+(29, 'about.accordion3_body', 'Accordion 3 - Body', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>', NULL, 'rich_text_box', 23, 'About'),
+(30, 'about.st3_title', 'Section 3 - Title', 'Liên Hệ!', NULL, 'text', 24, 'About'),
+(31, 'about.st3_body', 'Section 3 - Body', '<p>Đang cập nhật<br />Địa chỉ : Đang cập nhật<br />Email: Đang cập nhật<br />Điện thoại : Đang cập nhật</p>', NULL, 'rich_text_box', 25, 'About'),
+(32, 'service.title', 'Title', 'Dịch Vụ', NULL, 'text', 26, 'Service'),
+(33, 'service.heading', 'Heading', 'Các Dịch Vụ Của Chúng Tôi', NULL, 'text', 27, 'Service'),
+(34, 'service.item1_title', 'Item 1 - Title', 'THIÊT KẾ TRANG WEB', NULL, 'text', 28, 'Service'),
+(35, 'service.item1_body', 'Item 1 - Body', '<p><span style=\"color: rgba(0, 0, 0, 0.7); font-family: Quicksand, Arial, sans-serif; font-size: 12.75px;\">Những trang web ch&uacute;ng t&ocirc;i thiết kế đều th&ocirc;ng qua kiểm duyệt chất lượng. Giao diện phong ph&uacute;, chức năng vượt trội, tối ưu từ kh&oacute;a, kết nối mạng x&atilde; hội.</span></p>', NULL, 'rich_text_box', 29, 'Service'),
+(36, 'service.item2_title', 'Item 2 - Title', 'DỊCH VỤ HOSTING', NULL, 'text', 30, 'Service'),
+(37, 'service.item2_body', 'Item 2 - Body', '<p><span style=\"color: rgba(0, 0, 0, 0.7); font-family: Quicksand, Arial, sans-serif; font-size: 12.75px;\">Web Đẹp Nha Trang cung cấp dịch vụ hosting gi&aacute; rẻ, sử dụng ổ cứng SSD với hiệu suất vượt trội nhanh hơn gấp 40 lần so với ổ cứng th&ocirc;ng thường.</span></p>', NULL, 'rich_text_box', 31, 'Service'),
+(38, 'service.item3_title', 'Item 3 - Title', 'QUẢNG CÁO TRỰC TUYẾN', NULL, 'text', 32, 'Service'),
+(39, 'service.item3_body', 'Item 3 - Body', '<p><span style=\"color: rgba(0, 0, 0, 0.7); font-family: Quicksand, Arial, sans-serif; font-size: 12.75px;\">Cung cấp dịch vụ quảng c&aacute;o Google, Facebook v&agrave; Zalo v&agrave; c&aacute;c trang b&aacute;o chuy&ecirc;n nghiệp, nhằm mang lại hiệu quả cao cho kh&aacute;ch h&agrave;ng v&agrave; đối t&aacute;c.</span></p>', NULL, 'rich_text_box', 33, 'Service'),
+(40, 'service.item4_title', 'Item 4 - Title', 'QUẢN TRỊ TRANG WEB', NULL, 'text', 34, 'Service'),
+(41, 'service.item4_body', 'Item 4 - Body', '<p><span style=\"color: rgba(0, 0, 0, 0.7); font-family: Quicksand, Arial, sans-serif; font-size: 12.75px;\">Bạn kh&ocirc;ng c&oacute; thời gian chăm s&oacute;c website của m&igrave;nh, Web Đẹp Nha Trang sẽ gi&uacute;p bạn viết v&agrave; đăng b&agrave;i, sản phẩm mỗi th&aacute;ng, tối ưu từ kh&oacute;a tr&ecirc;n google.</span></p>', NULL, 'rich_text_box', 35, 'Service');
 
 -- --------------------------------------------------------
 
@@ -619,6 +698,12 @@ CREATE TABLE `user_roles` (
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `banners`
+--
+ALTER TABLE `banners`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `categories`
@@ -740,6 +825,12 @@ ALTER TABLE `user_roles`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `banners`
+--
+ALTER TABLE `banners`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -749,13 +840,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT cho bảng `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `menus`
@@ -767,7 +858,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT cho bảng `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -785,7 +876,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT cho bảng `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT cho bảng `posts`
@@ -803,7 +894,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT cho bảng `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `translations`
