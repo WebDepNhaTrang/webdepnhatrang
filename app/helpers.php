@@ -13,5 +13,19 @@ if(! function_exists('getAllBanners')){
     }
 }
 
+/*
+ * @select: string
+ * @order_col: string
+ * @order_by: asc/desc
+ */
+if(! function_exists('getAllServices')){
+    function getAllServices($select='*', $order_col, $order_by="asc"){
+        $item = App\Service::select($select)
+                ->orderBy($order_col, $order_by)
+                ->get();
+        return $item;
+    }
+}
+
 
 ?>

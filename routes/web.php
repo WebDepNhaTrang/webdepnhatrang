@@ -16,7 +16,7 @@
 | Backend
 |--------------------------------------------------------------------------
 */
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'administrator'], function () {
     Voyager::routes();
 });
 

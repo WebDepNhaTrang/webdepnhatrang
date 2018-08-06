@@ -43,17 +43,16 @@
 
 		<div class="colorlib-about">
 			<div class="colorlib-narrow-content">
-				<div class="row">
+				<div class="row row-bottom-padded-md">
 					<div class="col-md-6">
-						<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url(images/img_bg_2.jpg);">
+						<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url({{ Voyager::image(setting('about.st1_image')) }});">
 						</div>
 					</div>
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 						<div class="about-desc">
-							<span class="heading-meta">Giới Thiệu</span>
-							<h2 class="colorlib-heading">WEBDEPNHATRANG.COM</h2>
-							<p>Web Đẹp Nha Trang - Là một nhóm thiết kế Website chuyên nghiệp, chúng tôi luôn đảm bảo chất lượng sản phẩm cao nhất cho khách hàng với uy tín và kỹ thuật được tích lũy trong hơn 5 năm. Chúng tôi tự tin sẽ giúp quý khách đạt được hiệu quả cao nhất trong việc quảng bá thương hiệu của công ty.</p>
-                        <p>Thiết kế web đẹp - chuyên nghiệp - hiện đại - nhanh chóng, đó là điều chúng tôi có thể giúp quý khách thực hiện, bởi đó là lĩnh vực của chúng tôi với kinh nghiệm hơn 5 năm đủ để hiểu quý khách cần gì !</p>
+							<span class="heading-meta">{{ setting('about.st1-title') }}</span>
+							<h2 class="colorlib-heading">{{ setting('about.st1-heading') }}</h2>
+							<div>{!! setting('about.st1_body') !!}</div>
 						</div>
 						<div class="row padding">
 							<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
@@ -84,8 +83,8 @@
 			<div class="colorlib-narrow-content">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<span class="heading-meta">Dịch Vụ</span>
-						<h2 class="colorlib-heading">Các Dịch Vụ Của Web Đẹp Nha Trang</h2>
+						<span class="heading-meta">{{ setting('service.title') }}</span>
+						<h2 class="colorlib-heading">{{ setting('service.heading') }}</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -135,42 +134,38 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-6">
-								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-									<div class="services-img" style="background-image: url(images/services-1.jpg)"></div>
-									<div class="desc">
-										<h3>Thiết Kế Trang Web</h3>
-									</div>
-								</a>
-								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-									<div class="services-img" style="background-image: url(images/services-2.jpg)"></div>
-									<div class="desc">
-										<h3>Dịch Vụ Hosting</h3>
-									</div>
-								</a>
-								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-									<div class="services-img" style="background-image: url(images/services-3.jpg)"></div>
-									<div class="desc">
-										<h3>Quảng Cáo Trực Tuyến</h3>
-									</div>
-								</a>
+						<?php
+							$services = getAllServices('*', 'id', "asc");
+						?>
+						@if($services->count() > 0)
+							<div class="row">
+							@php
+								$count_services = $services->count(); 
+								$arr1 = ceil($count_services/2);
+								$arr2 = $count_services;
+							@endphp
+								<div class="col-md-6">
+								@for($i = 0; $i<$arr1; $i++)
+										<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
+											<div class="services-img" style="background-image: url({{ Voyager::image($services[$i]->image) }})"></div>
+											<div class="desc">
+												<h3>{{ $services[$i]->title }}</h3>
+											</div>
+										</a>
+								@endfor
+								</div>
+								<div class="col-md-6 move-bottom">
+								@for($j = $arr1; $j<$arr2; $j++)
+									<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
+										<div class="services-img" style="background-image: url({{ Voyager::image($services[$j]->image) }})"></div>
+										<div class="desc">
+											<h3>{{ $services[$j]->title }}</h3>
+										</div>
+									</a>
+								@endfor
+								</div>
 							</div>
-							<div class="col-md-6 move-bottom">
-								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-									<div class="services-img" style="background-image: url(images/services-4.jpg)"></div>
-									<div class="desc">
-										<h3>Quản Trị Trang Web</h3>
-									</div>
-								</a>
-								<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-									<div class="services-img" style="background-image: url(images/services-5.jpg)"></div>
-									<div class="desc">
-										<h3>Đẩy Từ Khóa</h3>
-									</div>
-								</a>
-							</div>
-						</div>
+							@endif
 					</div>
 				</div>
 			</div>

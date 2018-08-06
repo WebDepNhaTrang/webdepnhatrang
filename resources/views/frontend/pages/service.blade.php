@@ -71,50 +71,23 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                        <div class="services-img" style="background-image: url(images/services-1.jpg)"></div>
-                        <div class="desc">
-                            <h3>Design &amp; Build</h3>
-                        </div>
-                    </a>
+            <?php
+                $services = getAllServices('*', 'id', "asc");
+            ?>
+            @if($services->count() > 0)
+                <div class="row">
+                @foreach($services as $v)
+                    <div class="col-md-4">
+                        <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
+                            <div class="services-img" style="background-image: url({{ Voyager::image($v->image) }})"></div>
+                            <div class="desc">
+                                <h3>{{ $v->title }}</h3>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
                 </div>
-                <div class="col-md-4">
-                    <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                        <div class="services-img" style="background-image: url(images/services-2.jpg)"></div>
-                        <div class="desc">
-                            <h3>House Remodeling</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                        <div class="services-img" style="background-image: url(images/services-3.jpg)"></div>
-                        <div class="desc">
-                            <h3>Construction Management</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                        <div class="services-img" style="background-image: url(images/services-4.jpg)"></div>
-                        <div class="desc">
-                            <h3>Painting &amp; Tiling</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                        <div class="services-img" style="background-image: url(images/services-5.jpg)"></div>
-                        <div class="desc">
-                            <h3>Kitchen Remodeling</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 
