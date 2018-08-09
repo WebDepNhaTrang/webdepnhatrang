@@ -15,8 +15,8 @@
         <div class="colorlib-narrow-content">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-                    <span class="heading-meta">Blog</span>
-                    <h2 class="colorlib-heading">Read Blog</h2>
+                    <span class="heading-meta">{{ setting('news.title') }}</span>
+                    <h2 class="colorlib-heading">{{ setting('news.heading') }}</h2>
                 </div>
             </div>
             <div class="row">

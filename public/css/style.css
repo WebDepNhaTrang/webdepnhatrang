@@ -706,6 +706,11 @@ body.offcanvas {
       margin-top: 2em; } }
 
 .project {
+  -webkit-transition: background-position 2s ease-in-out;
+    -moz-transition: background-position 2s ease-in-out;
+    -ms-transition: background-position 2s ease-in-out;
+    -o-transition: background-position 2s ease-in-out;
+    transition: background-position 2s ease-in-out;
   background-size: cover;
   /* background-position: center center; */
   background-repeat: no-repeat;
@@ -720,7 +725,7 @@ body.offcanvas {
     bottom: 10px;
     left: 10px;
     right: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     opacity: 0;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
@@ -791,6 +796,9 @@ body.offcanvas {
         .project .desc span {
           -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); } }
+  .project:hover{
+    background-position:0px 100%;
+  }
   .project:hover .desc {
     opacity: 1; }
     .project:hover .desc h3 {
