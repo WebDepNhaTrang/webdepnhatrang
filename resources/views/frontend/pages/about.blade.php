@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'Giới Thiệu')
+@section('title', 'Chuyên Thiết Kế Website Đẹp Giá Rẻ Tại Nha Trang')
 @section('description', '')
 
 @section('fb_url', route('frontend.pages.about'))
@@ -113,36 +113,8 @@
     </div>
 
 
-    <div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="colorlib-narrow-content">
-            <div class="row">
-            </div>
-            <div class="row">
-                <div class="col-md-3 text-center animate-box">
-                    <span class="icon"><i class="flaticon-skyline"></i></span>
-                    <span class="colorlib-counter js-counter" data-from="0" data-to="1539" data-speed="5000" data-refresh-interval="50"></span>
-                    <span class="colorlib-counter-label">Projects</span>
-                </div>
-                <div class="col-md-3 text-center animate-box">
-                    <span class="icon"><i class="flaticon-engineer"></i></span>
-                    <span class="colorlib-counter js-counter" data-from="0" data-to="3653" data-speed="5000" data-refresh-interval="50"></span>
-                    <span class="colorlib-counter-label">Employees</span>
-                </div>
-                <div class="col-md-3 text-center animate-box">
-                    <span class="icon"><i class="flaticon-architect-with-helmet"></i></span>
-                    <span class="colorlib-counter js-counter" data-from="0" data-to="5987" data-speed="5000" data-refresh-interval="50"></span>
-                    <span class="colorlib-counter-label">Constructor</span>
-                </div>
-                <div class="col-md-3 text-center animate-box">
-                    <span class="icon"><i class="flaticon-worker"></i></span>
-                    <span class="colorlib-counter js-counter" data-from="0" data-to="3999" data-speed="5000" data-refresh-interval="50"></span>
-                    <span class="colorlib-counter-label">Partners</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('frontend.sections.counter')
 
-    @include('frontend.partials.get-in-touch')
+    @include('frontend.sections.get-in-touch')
 </div>
 @endsection

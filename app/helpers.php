@@ -27,5 +27,19 @@ if(! function_exists('getAllServices')){
     }
 }
 
+/*
+ * @select: string
+ * @order_col: string
+ * @order_by: asc/desc
+ * @paginate: number
+ */
+if(! function_exists('getAllProjects')){
+    function getAllProjects($select='*', $order_col, $order_by="asc", $paginate = 4){
+        $item = App\Project::select($select)
+                ->orderBy($order_col, $order_by)
+                ->paginate($paginate);
+        return $item;
+    }
+}
 
 ?>

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'Liên Hệ')
+@section('title', 'Chuyên Thiết Kế Website Đẹp Giá Rẻ Tại Nha Trang')
 @section('description', '')
 
 @section('fb_url', route('frontend.pages.contact'))
@@ -85,7 +85,7 @@
 
     <div id="map"></div>	
 
-    @include('frontend.partials.get-in-touch')
+    @include('frontend.sections.get-in-touch')
 </div>
 @endsection
 

@@ -171,136 +171,35 @@
 			</div>
 		</div>
 		
-		<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
-			<div class="colorlib-narrow-content">
-				<div class="row">
-				</div>
-				<div class="row">
-					<div class="col-md-3 text-center animate-box">
-						<span class="icon"><i class="flaticon-skyline"></i></span>
-						<span class="colorlib-counter js-counter" data-from="0" data-to="1539" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="colorlib-counter-label">Projects</span>
-					</div>
-					<div class="col-md-3 text-center animate-box">
-						<span class="icon"><i class="flaticon-engineer"></i></span>
-						<span class="colorlib-counter js-counter" data-from="0" data-to="3653" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="colorlib-counter-label">Employees</span>
-					</div>
-					<div class="col-md-3 text-center animate-box">
-						<span class="icon"><i class="flaticon-architect-with-helmet"></i></span>
-						<span class="colorlib-counter js-counter" data-from="0" data-to="5987" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="colorlib-counter-label">Constructor</span>
-					</div>
-					<div class="col-md-3 text-center animate-box">
-						<span class="icon"><i class="flaticon-worker"></i></span>
-						<span class="colorlib-counter js-counter" data-from="0" data-to="3999" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="colorlib-counter-label">Partners</span>
-					</div>
-				</div>
-			</div>
-		</div>
+		@include('frontend.sections.counter')
 
 		<div class="colorlib-work">
 			<div class="colorlib-narrow-content">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<span class="heading-meta">My Work</span>
-						<h2 class="colorlib-heading animate-box">Recent Work</h2>
+						<span class="heading-meta">{{ setting('project.title') }}</span>
+						<h2 class="colorlib-heading animate-box">{{ setting('project.heading') }}</h2>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<div class="project" style="background-image: url(images/img-1.jpg);">
-							<div class="desc">
-								<div class="con">
-									<h3><a href="work.html">Work 01</a></h3>
-									<span>Building</span>
-									<p class="icon">
-										<span><a href="#"><i class="icon-share3"></i></a></span>
-										<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-										<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-									</p>
+				@php
+					$projects = getAllProjects('*', 'created_at', 'asc', 4);
+				@endphp
+				@if($projects->count() >0)
+					<div class="row">
+						@foreach($projects as $v)
+						<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
+							<div class="project" style="background-image: url({{ Voyager::image($v->image) }});">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="work.html">{{ $v->name }}</a></h3>
+										<span>{{ $v->business }}</span>
+									</div>
 								</div>
 							</div>
 						</div>
+						@endforeach
 					</div>
-					<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-						<div class="project" style="background-image: url(images/img-2.jpg);">
-							<div class="desc">
-								<div class="con">
-									<h3><a href="work.html">Work 02</a></h3>
-									<span>House, Apartment</span>
-									<p class="icon">
-										<span><a href="#"><i class="icon-share3"></i></a></span>
-										<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-										<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-						<div class="project" style="background-image: url(images/img-3.jpg);">
-							<div class="desc">
-								<div class="con">
-									<h3><a href="work.html">Work 03</a></h3>
-									<span>Dining Room</span>
-									<p class="icon">
-										<span><a href="#"><i class="icon-share3"></i></a></span>
-										<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-										<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-						<div class="project" style="background-image: url(images/img-4.jpg);">
-							<div class="desc">
-								<div class="con">
-									<h3><a href="work.html">Work 04</a></h3>
-									<span>House, Building</span>
-									<p class="icon">
-										<span><a href="#"><i class="icon-share3"></i></a></span>
-										<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-										<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-						<div class="project" style="background-image: url(images/img-5.jpg);">
-							<div class="desc">
-								<div class="con">
-									<h3><a href="work.html">Work 05</a></h3>
-									<span>Condo, Pad</span>
-									<p class="icon">
-										<span><a href="#"><i class="icon-share3"></i></a></span>
-										<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-										<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<div class="project" style="background-image: url(images/img-6.jpg);">
-							<div class="desc">
-								<div class="con">
-									<h3><a href="work.html">Work 06</a></h3>
-									<span>Table, Chairs</span>
-									<p class="icon">
-										<span><a href="#"><i class="icon-share3"></i></a></span>
-										<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-										<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				@endif
 			</div>
 		</div>
 
@@ -347,6 +246,6 @@
 			</div>
 		</div>
 
-		@include('frontend.partials.get-in-touch')
+		@include('frontend.sections.get-in-touch')
 	</div>
 @endsection

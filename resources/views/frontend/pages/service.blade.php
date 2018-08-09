@@ -91,6 +91,6 @@
         </div>
     </div>
 
-    @include('frontend.partials.get-in-touch')
+    @include('frontend.sections.get-in-touch')
 </div>
 @endsection

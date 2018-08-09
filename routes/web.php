@@ -35,10 +35,10 @@ Route::get('/gioi-thieu.html', function () {
     return view('frontend.pages.about');
 })->name('frontend.pages.about');
 
-// Thiết Kế Web
-Route::get('/thiet-ke-website.html', function () {
-    return view('frontend.pages.design');
-})->name('frontend.pages.design');
+// Dự Án
+Route::get('/du-an.html', function () {
+    return view('frontend.pages.project');
+})->name('frontend.pages.project');
 
 // Dịch Vụ
 Route::get('/dich-vu.html', function () {

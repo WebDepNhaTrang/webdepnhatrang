@@ -1,5 +1,14 @@
 @extends('frontend.layouts.master')
 
+@section('title', 'Chuyên Thiết Kế Website Đẹp Giá Rẻ Tại Nha Trang')
+@section('description', '')
+
+@section('fb_url', route('frontend.pages.news'))
+@section('fb_type', 'website')
+@section('fb_title', '')
+@section('fb_des', '')
+@section('fb_img', '')
+
 @section('content')
 <div id="colorlib-main">
     <div class="colorlib-blog">
@@ -91,6 +100,6 @@
         </div>
     </div>
 
-    @include('frontend.partials.get-in-touch')
+    @include('frontend.sections.get-in-touch')
 </div>
 @endsection
