@@ -78,7 +78,7 @@
                 <div class="row">
                 @foreach($services as $v)
                     <div class="col-md-4">
-                        <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
+                        <a href="{{ route('frontend.pages.service-detail', ['slug' => $v->slug, 'id' => $v->id]) }}" class="services-wrap animate-box" data-animate-effect="fadeInRight">
                             <div class="services-img" style="background-image: url({{ Voyager::image($v->image) }})"></div>
                             <div class="desc">
                                 <h3>{{ $v->title }}</h3>
