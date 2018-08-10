@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th8 06, 2018 lúc 10:38 AM
+-- Thời gian đã tạo: Th8 10, 2018 lúc 09:31 AM
 -- Phiên bản máy phục vụ: 10.1.30-MariaDB
 -- Phiên bản PHP: 7.2.2
 
@@ -70,8 +70,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, NULL, 1, 'Category 1', 'category-1', '2018-07-18 02:22:40', '2018-07-18 02:22:40'),
-(2, NULL, 1, 'Category 2', 'category-2', '2018-07-18 02:22:40', '2018-07-18 02:22:40');
+(1, NULL, 1, 'Tin Tức', 'news-category', '2018-07-18 02:22:40', '2018-08-09 02:49:44');
 
 -- --------------------------------------------------------
 
@@ -164,7 +163,23 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (62, 7, 'link_btn', 'text', 'Link Button', 0, 1, 1, 1, 1, 1, NULL, 6),
 (63, 7, 'order', 'number', 'Order', 0, 1, 1, 1, 1, 1, NULL, 7),
 (64, 7, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 8),
-(65, 7, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 9);
+(65, 7, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 9),
+(66, 9, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(67, 9, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, NULL, 2),
+(68, 9, 'slug', 'text', 'Slug', 1, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:services,slug\"}}', 3),
+(69, 9, 'excerpt', 'rich_text_box', 'Excerpt', 0, 1, 1, 1, 1, 1, NULL, 4),
+(70, 9, 'body', 'rich_text_box', 'Body', 0, 1, 1, 1, 1, 1, NULL, 5),
+(71, 9, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 6),
+(72, 9, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 1, NULL, 7),
+(73, 9, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 8),
+(74, 10, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(75, 10, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 2),
+(76, 10, 'business', 'text', 'Business', 0, 1, 1, 1, 1, 1, NULL, 3),
+(77, 10, 'body', 'rich_text_box', 'Body', 0, 1, 1, 1, 1, 1, NULL, 4),
+(78, 10, 'external_link', 'text', 'External Link', 0, 1, 1, 1, 1, 1, NULL, 5),
+(79, 10, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 6),
+(80, 10, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 7),
+(81, 10, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 8);
 
 -- --------------------------------------------------------
 
@@ -201,7 +216,9 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2018-07-18 02:22:40', '2018-07-18 02:22:40'),
 (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
 (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
-(7, 'banners', 'banners', 'Banner', 'Banners', 'voyager-photos', 'App\\Banner', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-05 21:17:41', '2018-08-05 21:17:41');
+(7, 'banners', 'banners', 'Banner', 'Banners', 'voyager-photos', 'App\\Banner', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
+(9, 'services', 'services', 'Service', 'Services', 'voyager-shop', 'App\\Service', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-06 01:53:03', '2018-08-06 01:53:03'),
+(10, 'projects', 'projects', 'Project', 'Projects', 'voyager-backpack', 'App\\Project', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-09 02:15:40', '2018-08-09 02:15:40');
 
 -- --------------------------------------------------------
 
@@ -261,18 +278,20 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2018-07-18 02:22:40', '2018-08-05 21:18:45', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2018-07-18 02:22:40', '2018-08-05 21:18:45', 'voyager.bread.index', NULL),
 (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 3, '2018-07-18 02:22:40', '2018-08-05 21:19:12', 'voyager.settings.index', NULL),
-(11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, 22, 3, '2018-07-18 02:22:40', '2018-08-05 21:18:59', 'voyager.categories.index', NULL),
-(12, 1, 'Posts', '', '_self', 'voyager-news', NULL, 22, 2, '2018-07-18 02:22:41', '2018-08-05 21:18:53', 'voyager.posts.index', NULL),
-(13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, 22, 4, '2018-07-18 02:22:41', '2018-08-05 21:19:03', 'voyager.pages.index', NULL),
+(11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, 22, 5, '2018-07-18 02:22:40', '2018-08-09 02:15:53', 'voyager.categories.index', NULL),
+(12, 1, 'Posts', '', '_self', 'voyager-news', NULL, 22, 4, '2018-07-18 02:22:41', '2018-08-09 02:15:53', 'voyager.posts.index', NULL),
+(13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, 22, 6, '2018-07-18 02:22:41', '2018-08-09 02:15:53', 'voyager.pages.index', NULL),
 (14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2018-07-18 02:22:41', '2018-08-05 21:18:45', 'voyager.hooks', NULL),
-(15, 2, 'Trang Chủ', '', '_self', NULL, '#000000', NULL, 15, '2018-07-18 20:04:34', '2018-07-18 20:04:34', 'frontend.pages.home', NULL),
-(16, 2, 'Giới Thiệu', '', '_self', NULL, '#000000', NULL, 16, '2018-07-18 20:04:48', '2018-07-18 20:04:48', 'frontend.pages.about', NULL),
-(17, 2, 'Thiết Kế Website', '', '_self', NULL, '#000000', NULL, 17, '2018-07-18 20:05:05', '2018-07-18 20:21:02', 'frontend.pages.design', 'null'),
-(18, 2, 'Dịch Vụ', '', '_self', NULL, '#000000', NULL, 18, '2018-07-18 20:05:14', '2018-07-18 20:21:13', 'frontend.pages.service', 'null'),
-(19, 2, 'Tin Tức', '', '_self', NULL, '#000000', NULL, 19, '2018-07-18 20:05:23', '2018-07-18 20:21:23', 'frontend.pages.news', 'null'),
-(20, 2, 'Liên Hệ', '', '_self', NULL, '#000000', NULL, 20, '2018-07-18 20:05:30', '2018-07-18 20:32:08', 'frontend.pages.contact', 'null'),
+(15, 2, 'Trang Chủ', '', '_self', NULL, '#000000', NULL, 1, '2018-07-18 20:04:34', '2018-08-09 02:43:27', 'frontend.pages.home', NULL),
+(16, 2, 'Giới Thiệu', '', '_self', NULL, '#000000', NULL, 2, '2018-07-18 20:04:48', '2018-08-09 02:43:27', 'frontend.pages.about', NULL),
+(17, 2, 'Dự Án', '', '_self', NULL, '#000000', NULL, 4, '2018-07-18 20:05:05', '2018-08-09 02:43:27', 'frontend.pages.project', 'null'),
+(18, 2, 'Dịch Vụ', '', '_self', NULL, '#000000', NULL, 3, '2018-07-18 20:05:14', '2018-08-09 02:43:27', 'frontend.pages.service', 'null'),
+(19, 2, 'Tin Tức', '', '_self', NULL, '#000000', NULL, 5, '2018-07-18 20:05:23', '2018-08-09 02:43:27', 'frontend.pages.news', 'null'),
+(20, 2, 'Liên Hệ', '', '_self', NULL, '#000000', NULL, 6, '2018-07-18 20:05:30', '2018-08-09 02:43:27', 'frontend.pages.contact', 'null'),
 (21, 1, 'Banners', '', '_self', 'voyager-photos', NULL, 22, 1, '2018-08-05 21:17:41', '2018-08-05 21:18:45', 'voyager.banners.index', NULL),
-(22, 1, 'Frontend Custom', '', '_self', 'voyager-paint-bucket', '#000000', NULL, 2, '2018-08-05 21:18:39', '2018-08-05 21:18:49', NULL, '');
+(22, 1, 'Frontend Custom', '', '_self', 'voyager-paint-bucket', '#000000', NULL, 2, '2018-08-05 21:18:39', '2018-08-05 21:18:49', NULL, ''),
+(23, 1, 'Services', '', '_self', 'voyager-shop', NULL, 22, 2, '2018-08-06 01:53:03', '2018-08-06 01:53:19', 'voyager.services.index', NULL),
+(24, 1, 'Projects', '', '_self', 'voyager-backpack', NULL, 22, 3, '2018-08-09 02:15:40', '2018-08-09 02:15:53', 'voyager.projects.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -422,7 +441,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (43, 'read_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
 (44, 'edit_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
 (45, 'add_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
-(46, 'delete_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41');
+(46, 'delete_banners', 'banners', '2018-08-05 21:17:41', '2018-08-05 21:17:41'),
+(47, 'browse_services', 'services', '2018-08-06 01:53:03', '2018-08-06 01:53:03'),
+(48, 'read_services', 'services', '2018-08-06 01:53:03', '2018-08-06 01:53:03'),
+(49, 'edit_services', 'services', '2018-08-06 01:53:03', '2018-08-06 01:53:03'),
+(50, 'add_services', 'services', '2018-08-06 01:53:03', '2018-08-06 01:53:03'),
+(51, 'delete_services', 'services', '2018-08-06 01:53:03', '2018-08-06 01:53:03'),
+(52, 'browse_projects', 'projects', '2018-08-09 02:15:40', '2018-08-09 02:15:40'),
+(53, 'read_projects', 'projects', '2018-08-09 02:15:40', '2018-08-09 02:15:40'),
+(54, 'edit_projects', 'projects', '2018-08-09 02:15:40', '2018-08-09 02:15:40'),
+(55, 'add_projects', 'projects', '2018-08-09 02:15:40', '2018-08-09 02:15:40'),
+(56, 'delete_projects', 'projects', '2018-08-09 02:15:40', '2018-08-09 02:15:40');
 
 -- --------------------------------------------------------
 
@@ -484,7 +513,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (43, 1),
 (44, 1),
 (45, 1),
-(46, 1);
+(46, 1),
+(47, 1),
+(48, 1),
+(49, 1),
+(50, 1),
+(51, 1),
+(52, 1),
+(53, 1),
+(54, 1),
+(55, 1),
+(56, 1);
 
 -- --------------------------------------------------------
 
@@ -515,10 +554,36 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
-(1, 0, NULL, 'Lorem Ipsum Post', NULL, 'This is the excerpt for the Lorem Ipsum Post', '<p>This is the body of the lorem ipsum post</p>', 'posts/post1.jpg', 'lorem-ipsum-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
-(2, 0, NULL, 'My Sample Post', NULL, 'This is the excerpt for the sample Post', '<p>This is the body for the sample post, which includes the body.</p>\n                <h2>We can use all kinds of format!</h2>\n                <p>And include a bunch of other stuff.</p>', 'posts/post2.jpg', 'my-sample-post', 'Meta Description for sample post', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
-(3, 0, NULL, 'Latest Post', NULL, 'This is the excerpt for the latest post', '<p>This is the body for the latest post</p>', 'posts/post3.jpg', 'latest-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2018-07-18 02:22:41', '2018-07-18 02:22:41'),
-(4, 0, NULL, 'Yarr Post', NULL, 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', 'posts/post4.jpg', 'yarr-post', 'this be a meta descript', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2018-07-18 02:22:41', '2018-07-18 02:22:41');
+(1, 1, 1, 'Demo Tin Tức 1', NULL, 'Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>', 'posts/August2018/esSBvc5Kf9UgX3yptcCu.jpg', 'demo-tin-tuc-1', NULL, NULL, 'PUBLISHED', 0, '2018-08-09 21:11:23', '2018-08-09 21:11:23'),
+(2, 1, 1, 'Demo Tin Tức 2', NULL, 'Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>', 'posts/August2018/sDjCzRVoGRTLUezfmXGF.jpg', 'demo-tin-tuc-2', NULL, NULL, 'PUBLISHED', 0, '2018-08-09 21:12:08', '2018-08-09 21:12:08'),
+(3, 1, 1, 'Demo Tin Tức 3', NULL, 'Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>', 'posts/August2018/4aNAxYD769KWun8u4Sy2.jpg', 'demo-tin-tuc-3', NULL, NULL, 'PUBLISHED', 0, '2018-08-09 21:12:37', '2018-08-09 21:12:37'),
+(4, 1, 1, 'Demo Tin Tức 4', NULL, 'Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>', 'posts/August2018/nVuRVGs4Be2ndIEhV9rZ.jpg', 'demo-tin-tuc-4', NULL, NULL, 'PUBLISHED', 0, '2018-08-09 21:13:01', '2018-08-09 21:13:01'),
+(5, 1, 1, 'Demo Tin Tức 5', NULL, 'Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.&nbsp;</p>', 'posts/August2018/JyCYxkl4OkD7sjC5OFik.jpg', 'demo-tin-tuc-5', NULL, NULL, 'PUBLISHED', 0, '2018-08-09 21:13:33', '2018-08-09 21:13:33');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `projects`
+--
+
+CREATE TABLE `projects` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `business` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci,
+  `external_link` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `projects`
+--
+
+INSERT INTO `projects` (`id`, `name`, `business`, `body`, `external_link`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Book2go', 'Khách sạn, Căn Hộ, Tour', NULL, 'https://book2govn.com', 'projects/August2018/XPAan8mEDrjwJCjCtAtk.png', '2018-08-09 02:27:00', '2018-08-09 02:37:06'),
+(2, 'Jungle Beach', 'Resort', NULL, 'https://junglebeachnhatrang.com', 'projects/August2018/yT4jCcgcsqZZY9oLN65J.png', '2018-08-09 02:29:00', '2018-08-09 02:36:52');
 
 -- --------------------------------------------------------
 
@@ -541,6 +606,34 @@ CREATE TABLE `roles` (
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'Administrator', '2018-07-18 02:22:40', '2018-07-18 02:22:40'),
 (2, 'user', 'Normal User', '2018-07-18 02:22:40', '2018-07-18 02:22:40');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `services`
+--
+
+CREATE TABLE `services` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `excerpt` text COLLATE utf8mb4_unicode_ci,
+  `body` text COLLATE utf8mb4_unicode_ci,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `services`
+--
+
+INSERT INTO `services` (`id`, `title`, `slug`, `excerpt`, `body`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Thiết Kế Trang Web', 'thiet-ke-trang-web', NULL, '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>', 'services/August2018/XmgJ1B0QeXrlvyEM8ukl.jpg', '2018-08-06 01:55:29', '2018-08-09 23:04:35'),
+(2, 'Dịch Vụ Hosting', 'dich-vu-hosting', NULL, '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>', 'services/August2018/zJosjv3CYJDvJRKqyk6m.jpg', '2018-08-06 01:56:06', '2018-08-09 23:04:29'),
+(3, 'Quảng Cáo Trực Tuyến', 'quang-cao-truc-tuyen', NULL, '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>', 'services/August2018/2bIAxMlZiOht2iv47Erk.jpg', '2018-08-06 01:56:21', '2018-08-09 23:04:23'),
+(4, 'Quản Trị Trang Web', 'quan-tri-trang-web', NULL, '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>', 'services/August2018/ixFVSe9YSxd9NUXEOW6H.jpg', '2018-08-06 01:56:38', '2018-08-09 23:04:18'),
+(5, 'Đẩy Từ Khóa', 'day-tu-khoa', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>&nbsp;</p>', '<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>\r\n<p>Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật. Dữ liệu đang được cập nhật.</p>', 'services/August2018/lHLWXtdN4FBXWXpqOYZG.jpg', '2018-08-06 01:57:00', '2018-08-09 21:31:37');
 
 -- --------------------------------------------------------
 
@@ -603,7 +696,12 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (38, 'service.item3_title', 'Item 3 - Title', 'QUẢNG CÁO TRỰC TUYẾN', NULL, 'text', 32, 'Service'),
 (39, 'service.item3_body', 'Item 3 - Body', '<p><span style=\"color: rgba(0, 0, 0, 0.7); font-family: Quicksand, Arial, sans-serif; font-size: 12.75px;\">Cung cấp dịch vụ quảng c&aacute;o Google, Facebook v&agrave; Zalo v&agrave; c&aacute;c trang b&aacute;o chuy&ecirc;n nghiệp, nhằm mang lại hiệu quả cao cho kh&aacute;ch h&agrave;ng v&agrave; đối t&aacute;c.</span></p>', NULL, 'rich_text_box', 33, 'Service'),
 (40, 'service.item4_title', 'Item 4 - Title', 'QUẢN TRỊ TRANG WEB', NULL, 'text', 34, 'Service'),
-(41, 'service.item4_body', 'Item 4 - Body', '<p><span style=\"color: rgba(0, 0, 0, 0.7); font-family: Quicksand, Arial, sans-serif; font-size: 12.75px;\">Bạn kh&ocirc;ng c&oacute; thời gian chăm s&oacute;c website của m&igrave;nh, Web Đẹp Nha Trang sẽ gi&uacute;p bạn viết v&agrave; đăng b&agrave;i, sản phẩm mỗi th&aacute;ng, tối ưu từ kh&oacute;a tr&ecirc;n google.</span></p>', NULL, 'rich_text_box', 35, 'Service');
+(41, 'service.item4_body', 'Item 4 - Body', '<p><span style=\"color: rgba(0, 0, 0, 0.7); font-family: Quicksand, Arial, sans-serif; font-size: 12.75px;\">Bạn kh&ocirc;ng c&oacute; thời gian chăm s&oacute;c website của m&igrave;nh, Web Đẹp Nha Trang sẽ gi&uacute;p bạn viết v&agrave; đăng b&agrave;i, sản phẩm mỗi th&aacute;ng, tối ưu từ kh&oacute;a tr&ecirc;n google.</span></p>', NULL, 'rich_text_box', 35, 'Service'),
+(42, 'project.title', 'Title', 'Sản Phẩm', NULL, 'text', 36, 'Project'),
+(43, 'project.heading', 'Heading', 'Dự Án Tiêu Biểu', NULL, 'text', 37, 'Project'),
+(44, 'news.title', 'Title', 'Tin Tức', NULL, 'text', 38, 'News'),
+(45, 'news.heading', 'Heading', 'Blog Chia Sẻ', NULL, 'text', 39, 'News'),
+(46, 'news.paginate', 'Paginate', '3', NULL, 'text', 40, 'News');
 
 -- --------------------------------------------------------
 
@@ -784,11 +882,24 @@ ALTER TABLE `posts`
   ADD UNIQUE KEY `posts_slug_unique` (`slug`);
 
 --
+-- Chỉ mục cho bảng `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
+
+--
+-- Chỉ mục cho bảng `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `services_slug_unique` (`slug`);
 
 --
 -- Chỉ mục cho bảng `settings`
@@ -834,19 +945,19 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT cho bảng `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `menus`
@@ -858,7 +969,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT cho bảng `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -876,13 +987,19 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT cho bảng `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`
@@ -891,10 +1008,16 @@ ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT cho bảng `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT cho bảng `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT cho bảng `translations`
