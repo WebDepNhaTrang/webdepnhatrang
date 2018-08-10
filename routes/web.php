@@ -44,11 +44,17 @@ Route::get('/du-an.html', function () {
 Route::get('/dich-vu.html', function () {
     return view('frontend.pages.service');
 })->name('frontend.pages.service');
+// Chi Tiết Dịch Vụ
+Route::get('/dich-vu/{slug}_{id}.html', 'FrontendController@serviceDetail')
+    ->name('frontend.pages.service-detail');
 
 // Tin Tức
 Route::get('/tin-tuc.html', function () {
     return view('frontend.pages.news');
 })->name('frontend.pages.news');
+// Chi Tiết Tin Tức
+Route::get('/{slug}_{id}.html', 'FrontendController@newsDetail')
+    ->name('frontend.pages.news-detail');
 
 // Liên Hệ
 Route::get('/lien-he.html', function () {

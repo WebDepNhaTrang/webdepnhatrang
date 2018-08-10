@@ -19,87 +19,44 @@
                     <h2 class="colorlib-heading">{{ setting('news.heading') }}</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img"><img src="images/blog-1.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                        <div class="desc">
-                            <span><small>April 14, 2018 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                            <h3><a href="blog.html">Renovating National Gallery</a></h3>
-                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            <?php
+                $news = getPostByCategory('*', 1, 'created_at', 'desc', setting('news.paginate'));
+            ?>
+            @if($news->count() > 0)
+                @php $num = 1; @endphp
+                @foreach($news as $v)
+                    @php
+                        if($num == 4){
+                            $num = 1;
+                        }
+                    @endphp
+                    @if($num == 1)
+                    <div class="row">
+                    @endif
+                        <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="blog-entry">
+                                <a href="{{ route('frontend.pages.news-detail', ['slug' => $v->slug, 'id' => $v->id]) }}" class="blog-img"><img src="{{ Voyager::image($v->image) }}" class="img-responsive" alt="{{ $v->title }}"></a>
+                                <div class="desc">
+                                    <span><small>{{ $v->created_at->format('d-m-Y') }} </small> | <small> Admin </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+                                    <h3><a href="{{ route('frontend.pages.news-detail', ['slug' => $v->slug, 'id' => $v->id]) }}">{{ $v->title }}</a></h3>
+                                    <p>{{ $v->excerpt }}</p>
+                                </div>
+                            </div>
                         </div>
+                    @if($num == 3)    
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img"><img src="images/blog-2.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                        <div class="desc">
-                            <span><small>April 14, 2018 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                            <h3><a href="blog.html">Wordpress for a Beginner</a></h3>
-                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img"><img src="images/blog-3.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                        <div class="desc">
-                            <span><small>April 14, 2018 </small> | <small> Inspiration </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                            <h3><a href="blog.html">Make website from scratch</a></h3>
-                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img"><img src="images/blog-4.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                        <div class="desc">
-                            <span><small>April 14, 2018 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                            <h3><a href="blog.html">Renovating National Gallery</a></h3>
-                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img"><img src="images/blog-5.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                        <div class="desc">
-                            <span><small>April 14, 2018 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                            <h3><a href="blog.html">Wordpress for a Beginner</a></h3>
-                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img"><img src="images/blog-6.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                        <div class="desc">
-                            <span><small>April 14, 2018 </small> | <small> Inspiration </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                            <h3><a href="blog.html">Make website from scratch</a></h3>
-                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                    @endif
+                    @php $num++ @endphp
+                @endforeach
+            @endif
             <div class="row">
                 <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                    <ul class="pagination">
-                        <li class="disabled"><a href="#">&laquo;</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                    </ul>
-                </div>
+                    {{ $news->links() }}
+                </div>    
             </div>
         </div>
     </div>
 
-    @include('frontend.sections.get-in-touch')
+    @include('frontend.sections.get-it-touch')
 </div>
 @endsection
