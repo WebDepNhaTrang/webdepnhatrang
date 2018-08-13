@@ -191,7 +191,7 @@
 							<div class="project" style="background-image: url({{ Voyager::image($v->image) }});">
 								<div class="desc">
 									<div class="con">
-										<h3><a href="work.html">{{ $v->name }}</a></h3>
+										<h3><a href="{{ $v->external_link }}" target="_blank">{{ $v->name }}</a></h3>
 										<span>{{ $v->business }}</span>
 									</div>
 								</div>
@@ -223,7 +223,7 @@
 							<div class="desc">
 								<span><small>{{ $v->created_at->format('d-m-Y') }} </small> | <small> Admin </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
 								<h3><a href="{{ route('frontend.pages.news-detail', ['slug' => $v->slug, 'id' => $v->id]) }}">{{ $v->title }}</a></h3>
-								<p>{{ $v->excerpt }}</p>
+								<p class="excerpt">{{ shorten_text($v->excerpt, 220, '...', true) }}</p>
 							</div>
 						</div>
 					</div>

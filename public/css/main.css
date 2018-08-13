@@ -36,3 +36,8 @@
 .mtb-30{ margin-top: 30px; margin-bottom: 30px; }
 .mtb-40{ margin-top: 40px; margin-bottom: 40px; }
 .mtb-50{ margin-top: 50px; margin-bottom: 50px; }
+
+.blog-entry .excerpt{
+    height: 66px;
+    overflow: hidden;
+}

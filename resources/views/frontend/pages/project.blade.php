@@ -29,7 +29,7 @@
                         <div class="project" style="background-image: url({{ Voyager::image($v->image) }});">
                             <div class="desc">
                                 <div class="con">
-                                    <h3><a href="work.html">{{ $v->name }}</a></h3>
+                                    <h3><a href="{{ $v->external_link }}" target="_blank">{{ $v->name }}</a></h3>
                                     <span>{{ $v->business }}</span>
                                 </div>
                             </div>
@@ -37,19 +37,12 @@
                     </div>
                     @endforeach
                 </div>
-                <div class="row">
-                    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                        <ul class="pagination">
-                            <li class="disabled"><a href="#">&laquo;</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul>
-                    </div>
-                </div>
             @endif
+            <div class="row">
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                    {{ $projects->links() }}
+                </div>    
+            </div>
         </div>
     </div>
 
