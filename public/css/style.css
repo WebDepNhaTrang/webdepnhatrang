@@ -15,7 +15,7 @@ body {
   font-family: "Quicksand", Arial, sans-serif;
   font-weight: 400;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
   color: rgba(0, 0, 0, 0.7); }
   @media screen and (max-width: 992px) {
     body {
@@ -32,7 +32,7 @@ a {
     text-decoration: none !important; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1em; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
@@ -82,7 +82,7 @@ figure {
   bottom: 0;
   top: 0;
   left: 0;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   z-index: 1001;
   background: #2C2C2C;
   -webkit-transition: 0.5s;

@@ -5,7 +5,7 @@
 
 @section('fb_url', route('frontend.pages.project'))
 @section('fb_type', 'website')
-@section('fb_title', '')
+@section('fb_title', 'Chuyên Thiết Kế Website Đẹp Giá Rẻ Tại Nha Trang')
 @section('fb_des', '')
 @section('fb_img', '')
 
@@ -20,7 +20,7 @@
                 </div>
             </div>
             @php
-                $projects = getAllProjects('*', 'created_at', 'asc', 4);
+                $projects = getAllProjects('*', 'created_at', 'asc', setting('project.paginate'));
             @endphp
             @if($projects->count() >0)
                 <div class="row row-bottom-padded-md">

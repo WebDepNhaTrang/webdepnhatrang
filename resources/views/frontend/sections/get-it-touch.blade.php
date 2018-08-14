@@ -10,7 +10,7 @@
                 <div class="colorlib-lead">
                     {!! setting('about.st3_body') !!}
                 </div>
-                <p><a href="#" class="btn btn-primary btn-learn">Liên hệ với chúng tôi!</a></p>
+                <p><a href="{{ route('frontend.pages.contact') }}" class="btn btn-primary btn-learn">Liên hệ với chúng tôi!</a></p>
             </div>
         </div>
     </div>

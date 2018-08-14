@@ -72,7 +72,7 @@
                                     <textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Nội Dung" name="msg" required></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
+                                    <input type="submit" class="btn btn-primary btn-send-message" value="Gửi">
                                 </div>
                             </form>
                         </div>

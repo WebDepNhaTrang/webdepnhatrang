@@ -26,19 +26,19 @@
                     </div>
                     <div class="row padding">
                         <div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
-                            <a href="#" class="steps active">
+                            <a href="http://webdepnhatrang.com/dich-vu/thiet-ke-trang-web_1.html" class="steps active">
                                 <p class="icon"><span><i class="icon-check"></i></span></p>
                                 <h3>Thiết Kế <br>Web</h3>
                             </a>
                         </div>
                         <div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
-                            <a href="#" class="steps">
+                            <a href="http://webdepnhatrang.com/dich-vu/dich-vu-hosting_2.html" class="steps">
                                 <p class="icon"><span><i class="icon-check"></i></span></p>
                                 <h3>Dịch Vụ <br>Hosting</h3>
                             </a>
                         </div>
                         <div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
-                            <a href="#" class="steps">
+                            <a href="http://webdepnhatrang.com/dich-vu/quan-tri-trang-web_4.html" class="steps">
                                 <p class="icon"><span><i class="icon-check"></i></span></p>
                                 <h3>Quản trị <br>Web</h3>
                             </a>
