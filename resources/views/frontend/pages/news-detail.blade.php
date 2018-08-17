@@ -1,12 +1,12 @@
 @extends('frontend.layouts.master')
 
 @section('title', $news->title)
-@section('description', '')
+@section('description', $news->meta_description)
 
 @section('fb_url', route('frontend.pages.news-detail', ['slug' => $news->slug, 'id' => $news->id]))
 @section('fb_type', 'website')
 @section('fb_title', $news->title)
-@section('fb_des', '')
+@section('fb_des', $news->meta_description)
 @section('fb_img', Voyager::image($news->image))
 
 @section('content')
