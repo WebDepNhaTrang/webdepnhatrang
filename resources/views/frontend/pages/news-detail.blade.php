@@ -2,6 +2,7 @@
 
 @section('title', $news->title)
 @section('description', $news->meta_description)
+@section('meta_keywords', $news->meta_keywords)
 
 @section('fb_url', route('frontend.pages.news-detail', ['slug' => $news->slug, 'id' => $news->id]))
 @section('fb_type', 'website')

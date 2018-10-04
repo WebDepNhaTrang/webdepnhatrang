@@ -5,7 +5,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>@yield('title') | KatiSoft - Web Đẹp Nha Trang</title>
 	<meta name="description" content="@yield('description')">
-	<meta name="keywords" content="Web Đẹp Nha Trang, KaTiSoft, @yield('keywords')">
+	<meta name="keywords" content="Web Đẹp Nha Trang, KaTiSoft, @yield('meta_keywords')">
 	<meta name="author" content="KaTiSoft" />
 	<meta http-equiv="content-language" content="{{ app()->getLocale() }}" />
 	<meta name="robots" content="index, follow">
